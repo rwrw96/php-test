@@ -18,12 +18,14 @@
 <main>
 <h2>Practice</h2>
 <pre>
+<?php 
+$i = 1;
+while($i <= 365){
+    print($i . "\n");
+    $i = $i + 1; 
+}
 
-<?php $sum = 100+200+1000 ?>
-<?php $tax = 1.08 ?>
-
-合計金額は<?php print($sum); ?>です
-税込金額は<?php print($sum * $tax); ?>です
+?>
 </pre>
 </main>
 </body>    
