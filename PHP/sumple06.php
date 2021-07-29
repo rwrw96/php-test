@@ -18,12 +18,18 @@
 <main>
 <h2>Practice</h2>
 <pre>
+<?php 
+$i = 1;
+while($i <= 365){
+    print($i . "\n");
+    $i = $i + 1; 
+}
 
-<?php
-date_default_timezone_set('Asia/Tokyo');
-print("現在は".date("h時 i分 s秒")."です。");
+for($i = 1; $i <= 365; $i++) {
+    print($i . "\n");
+}
+
 ?>
-
 </pre>
 </main>
 </body>    

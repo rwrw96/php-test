@@ -21,7 +21,8 @@
 
 <?php
 date_default_timezone_set('Asia/Tokyo');
-print("現在は".date("h時 i分 s秒")."です。");
+$today = new DateTime();
+print($today -> format("G時 i分 s秒"));
 ?>
 
 </pre>
