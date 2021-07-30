@@ -31,7 +31,7 @@
 
 <article>
     <?php while ($memo = $memos -> fetch()): ?>
-        <p><a href="memo.php"><?php print($memo['memo']); ?></a></p>
+        <p><a href="memo.php?id=<?php print($memo['id']); ?>"><?php print($memo['memo']); ?></a></p>
         <time><?php print($memo['created_at']); ?></time>
         <hr>
     <?php endwhile; ?>

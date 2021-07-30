@@ -26,7 +26,15 @@
         echo 'DB接続エラー' . $e->getMessage();
     }
 
-    $memos = $db -> query('SELECT * FROM memos WHERE id=1');
+    $id = $_REQUEST['id'];
+    if(!is_numeric($id) || $id <= 0) {
+        print('1以上の数字で入力してください');
+        exit();
+    }
+
+
+    $memos = $db -> prepare('SELECT * FROM memos WHERE id=?');
+    $memos -> execute(array($id));
     $memo = $memos -> fetch();
 ?>
 
