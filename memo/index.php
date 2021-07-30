@@ -17,18 +17,10 @@
 
 <main>
 <h2>Practice</h2>
-
-<?php
-    try{
-        $db = new PDO ('mysql:dbname=mydb;host=localhost;charset=utf8', 
-        'root','root');
-    } catch(PDOexception $e) {
-        echo 'DB接続エラー' . $e->getMessage();
-    }
-
+<?php 
+    require('dbconnect.php'); 
     $memos = $db -> query('SELECT * FROM memos ORDER BY id DESC');
 ?>
-
 <article>
     <?php while ($memo = $memos -> fetch()): ?>
         <p><a href="memo.php?id=<?php print($memo['id']); ?>"><?php print($memo['memo']); ?></a></p>
