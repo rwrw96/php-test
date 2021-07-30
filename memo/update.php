@@ -17,29 +17,24 @@
 
 <main>
 <h2>Practice</h2>
+<?php 
+    require('dbconnect.php'); 
 
-<?php
-    require('dbconnect.php');
     $id = $_REQUEST['id'];
-    if(!is_numeric($id) || $id <= 0) {
-        print('1以上の数字で入力してください');
-        exit();
-    }
-
-
-    $memos = $db -> prepare('SELECT * FROM memos WHERE id=?');
+    $memos = $db -> prepare('SELECT * FROM memos WHERE id = ? ');
     $memos -> execute(array($id));
     $memo = $memos -> fetch();
 ?>
 
+
 <article>
-    <p><?php print($memo['memo']); ?></p>
-    <p><a href="update.php?id=<?php print($memo['id']); ?>">更新</a></p>
-    <a href="index.php">戻る</a>
+    <form action="update_do.php" method="POST">
+        <input type="hidden" name="id" value="<?php print($id); ?>">
+        <textarea name="memo" cols="30" rows="10"><?php print($memo['memo']); ?></textarea>
+        <button action="submit">修正する</button>
+        <p><a href="index.php">戻る</a></p>
+    </form>
 </article>
-
-
-
 </main>
 </body>    
 </html>
