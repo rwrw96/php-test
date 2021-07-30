@@ -21,21 +21,15 @@
 <?php
     require('dbconnect.php');
     $id = $_REQUEST['id'];
-    if(!is_numeric($id) || $id <= 0) {
-        print('1以上の数字で入力してください');
-        exit();
-    }
 
-
-    $memos = $db -> prepare('SELECT * FROM memos WHERE id=?');
+    $memos = $db -> prepare('DELETE FROM memos WHERE id=?');
     $memos -> execute(array($id));
     $memo = $memos -> fetch();
 ?>
 
 <article>
-    <p><?php print($memo['memo']); ?></p>
+    <p>削除成功しました</p>
     <p><a href="update.php?id=<?php print($memo['id']); ?>">更新</a></p>
-    <p><a href="delete.php?id=<?php print($memo['id']); ?>">削除</a></p>
     <a href="index.php">戻る</a>
 </article>
 
