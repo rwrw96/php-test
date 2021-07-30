@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="../PHP/css/style.css">
 
 <title>PHP</title>
 </head>
@@ -20,11 +20,13 @@
 <pre>
 
 <?php
-require('dbconnect.php');
+    require('dbconnect.php');
     $statement = $db -> prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
     $statement -> execute(array($_POST['memo']));
+    print('登録完了しました'); 
 ?>
-
+<br>
+<a href="input.php">戻る</a>
 </pre>
 </form>
 </main>
