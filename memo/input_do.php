@@ -23,7 +23,9 @@
 try {
     $db = new PDO('mysql:dbname=mydb; host=localhost; charset=utf8', 'root', 'root');
 
-    $db -> exec('INSERT INTO memos SET memo="' . $_POST['memo'] . '", created_at=NOW()');
+    $statement = $db -> prepare('INSERT INTO memos SET memo=?, created_at=NOW()');
+    $statement -> execute(array($_POST['memo']));
+    print('登録完了しました');    // $db -> exec('INSERT INTO memos SET memo="' . $_POST['memo'] . '", created_at=NOW()');
 } catch(PODexection $e) { 
     echo '接続エラー' . $e -> getMessage();
 }
