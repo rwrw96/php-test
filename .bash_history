@@ -126,3 +126,32 @@ git commit -m "test4"
 git push origin master
 sudo systemctl restart php74-php-fpm.service 
 sudo systemctl restart httpd
+git pull origin master
+ls
+cd memo/
+git pull origin master
+git remote
+git status
+git add ../.bash_history ../.mysql_history 
+git pull origin master
+git commit -m "ok"
+git push origin master
+git pull origin master
+git commit --amend --reset-author
+git push origin master
+git pull origin master
+git push origin master
+git pull origin master
+git push origin master
+cd
+sudo systemctl restart httpd
+ls
+cat memo/dbconnect.php 
+ mysql.server start
+mysql.server start
+Starting MySQL
+mysql.server status
+git pull origin master
+sudo systemctl restart httpd
+sudo tail -f /var/log/httpd/error_log
+mysql -h mydb.cle5jiuhhe8w.ap-northeast-1.rds.amazonaws.com -u root -p
