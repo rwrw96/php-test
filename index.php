@@ -89,7 +89,7 @@
   </head>
   <body>
     <?php if ($language === 'de'): ?>
-      <p class="text"><strong>Willkommen bei MAMP</strong></p>
+      <p class="text"><strong>Willkommen bei MAMP!</strong></p>
       <p class="text">Wenn Sie diese Seite sehen, dann bedeutet dies, dass MAMP erfolgreich eingerichtet und gestartet wurde. Sie können jetzt Ihren <span lang="en">Web</span>-Inhalt hinzufügen, diese Platzhalter-Seite<sup><a href="#footnote-1">1</a></sup> sollten Sie ersetzen <abbr title="beziehungsweise">bzw.</abbr> löschen.</p>
       <p class="text">
         <span lang="en">Server-Software</span>: <samp><?php echo strip_tags(htmlentities($_SERVER['SERVER_SOFTWARE'], ENT_QUOTES, 'UTF-8')); ?></samp><br>
