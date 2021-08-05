@@ -16,7 +16,7 @@
 </header>
 
 <main>
-<h2>Practice!!!!!!</h2>
+<h2>Practice</h2>
 
 <form action="input_do.php" method="post">
     <textarea name="memo" cols=50 rows=20 placeholder="ご自由にどうぞ"></textarea>
