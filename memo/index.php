@@ -27,12 +27,7 @@
     }
     
     $start = ($page - 1) * 5;
-    try{
-        $db = new PDO ('mysql:dbname=mydb;host=3.112.125.4;charset=utf8', 
-        'root','root');
-    } catch(PDOexception $e) {
-        echo 'DB接続エラー' . $e->getMessage();
-    }
+
     $memos = $db -> prepare('SELECT * FROM memos ORDER BY id DESC LIMIT ?, 5');
     $memos -> bindparam(1, $start, PDO::PARAM_INT);
     $memos -> execute();
